@@ -22,6 +22,23 @@ I would recommend the following as these can differ for every machine:
 - Remove the Z-stop if your X-axis stops before the probe can reach the bed
 - Check bed size on the config files. I changed the default size, including probing margins, as I added additonal bed clips. This is also modified under machine settings in cura.
 
+## BTT TFT35 E3 v3 Screen
+
+Random M1 Stop codes fix. In gcode.cpp:
+
+```
+Change this string:
+
+case 1: M0_M1(); break;
+
+To:
+
+case 1: break;
+```
+
+Source: https://www.reddit.com/r/BIGTREETECH/comments/rl4yqt/random_m1_stop_mid_prints/ and https://github.com/bigtreetech/BIGTREETECH-SKR-mini-E3/issues/618
+
+
 ## Process for building:
 
 - Checkout [Marlin bugfix-2.0.x branch](https://github.com/MarlinFirmware/Marlin/tree/bugfix-2.0.x)

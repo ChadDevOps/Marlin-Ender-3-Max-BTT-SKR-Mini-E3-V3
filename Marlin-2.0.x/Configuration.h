@@ -1135,9 +1135,9 @@
  *   M204 T    Travel Acceleration
  */
 // CHADDEVOPS - May need to lower if not set in cura
-#define DEFAULT_ACCELERATION          3000    // X, Y, Z ... and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  3000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   3000    // X, Y, Z ... acceleration for travel (non printing) moves
+#define DEFAULT_ACCELERATION          500    // X, Y, Z ... and E acceleration for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  500    // E acceleration for retracts
+#define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z ... acceleration for travel (non printing) moves
 
 /**
  * Default Jerk limits (mm/s)
@@ -1414,17 +1414,12 @@
 #define PROBING_MARGIN_FRONT 10 // CHADDEVOPS - was 10
 #define PROBING_MARGIN_BACK 0 // CHADDEVOPS - was 10
 
-// X and Y axis travel speed (mm/m) between probes
+// X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE 12000 // CHADDEVOPS
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_FEEDRATE_FAST (10*60) // CHADDEVOPS
 
-// Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
-
-// Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (10*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
 #define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
@@ -1612,11 +1607,11 @@
 
 // @section machine
 
-// The size of the print bed // Custom for Chad - CHADDEVOPS
+// The size of the printable area // Custom for Chad - CHADDEVOPS
 #define X_BED_SIZE 296 // was 310
 #define Y_BED_SIZE 300 // was 294
 
-// Travel limits (mm) after homing, corresponding to endstop positions. // Custom for Chad - CHADDEVOPS
+// Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions. // Custom for Chad - CHADDEVOPS
 #define X_MIN_POS -7
 #define Y_MIN_POS -10 // was -10
 #define Z_MIN_POS 0

@@ -42,7 +42,7 @@ Source: https://www.reddit.com/r/BIGTREETECH/comments/rl4yqt/random_m1_stop_mid_
 ## Process for building:
 
 - Checkout [Marlin bugfix-2.0.x branch](https://github.com/MarlinFirmware/Marlin/tree/bugfix-2.0.x)
-- Replace [platformio.ini](platformio.ini). The only change is `default_envs = STM32G0B1RE_btt`
+- Replace `platformio.ini` with the default or change `default_envs` to the following `default_envs = STM32G0B1RE_btt`
 - Replace/add the [*.h files](Marlin/) in the `/Marlin` directory.
 - Customize settings based on your printer hardware.
 - Build - see [Dr Vax on building the Marlin Firmware with VS Code](https://youtu.be/qPDBNBgdW6o?t=680)
@@ -96,6 +96,7 @@ In order to use this config with the mods listed above, run the following comman
 M301 P43.4599 I4.6234 D102.1308 ; std bronze tip
 
 M204 P500 ; set accel
+M201 X500 Y500
 M201 Z100; Set Z max accel to 300
 M203 Z10; Set Z max feedrate to 300
 M203 E150; Set E max feedrate
